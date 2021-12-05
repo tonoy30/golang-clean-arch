@@ -1,11 +1,10 @@
 package app
 
 import (
-	"github.com/labstack/echo/v4/middleware"
-	"log"
-
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"github.com/tonoy30/clean-arch/internal/service"
+	"log"
 )
 
 type App interface {
@@ -31,10 +30,7 @@ func NewApp(courseService service.CourseService) App {
 }
 
 func (a app) ConfigureRoutes() {
-	a.server.GET("/courses/:id", func(c echo.Context) error {
-		courseId := c.Param("id")
-		return c.String(200, courseId)
-	})
+	a.server.GET("/courses/:id", a.GetCourseById)
 	a.server.GET("/healthy", a.HealthCheck)
 }
 func (a app) Serve() {
