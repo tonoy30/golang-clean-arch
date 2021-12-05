@@ -3,9 +3,9 @@ package main
 import (
 	"log"
 
-	"github.com/tonoy30/go-commerce/internal/app"
-	"github.com/tonoy30/go-commerce/internal/repository"
-	"github.com/tonoy30/go-commerce/internal/service"
+	"github.com/tonoy30/clean-arch/internal/app"
+	"github.com/tonoy30/clean-arch/internal/repository"
+	"github.com/tonoy30/clean-arch/internal/service"
 )
 
 func main() {
@@ -23,6 +23,6 @@ func main() {
 	courseService := service.NewCourseService(dao)
 
 	// start server
-	app := app.NewApp(courseService)
-	app.Start()
+	application := app.NewApp(courseService)
+	application.Serve()
 }

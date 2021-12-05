@@ -38,6 +38,7 @@ func NewSQLDB() (*sql.DB, error) {
 	dbname := viper.GetString("database.dbname")
 	password := viper.GetString("database.password")
 	dbdriver := viper.GetString("database.dbdriver")
+
 	// Starting a database
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s dbname=%s password=%s sslmode=disable", host, port, user, dbname, password)
 	DB, err = sql.Open(dbdriver, psqlInfo)

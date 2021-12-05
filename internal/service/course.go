@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/tonoy30/go-commerce/internal/dto"
-	"github.com/tonoy30/go-commerce/internal/repository"
+	"github.com/tonoy30/clean-arch/internal/dto"
+	"github.com/tonoy30/clean-arch/internal/repository"
 )
 
 type CourseService interface {

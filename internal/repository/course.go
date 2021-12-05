@@ -2,7 +2,7 @@ package repository
 
 import (
 	"github.com/Masterminds/squirrel"
-	"github.com/tonoy30/go-commerce/internal/domain"
+	"github.com/tonoy30/clean-arch/internal/domain"
 )
 
 type CourseRepository interface {
