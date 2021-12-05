@@ -12,6 +12,7 @@ import (
 
 type DAO interface {
 	NewCourseRepository() CourseRepository
+	NewUserRepository() UserRepository
 }
 type dao struct{}
 
@@ -49,4 +50,7 @@ func NewSQLDB() (*sql.DB, error) {
 }
 func (d dao) NewCourseRepository() CourseRepository {
 	return &courseRepository{}
+}
+func (d dao) NewUserRepository() UserRepository {
+	return &userRepository{}
 }

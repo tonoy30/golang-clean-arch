@@ -7,6 +7,7 @@ import (
 
 type CourseService interface {
 	GetCourse(courseID int64) (*dto.Course, error)
+	CreateCourse(course *dto.Course) (int64, error)
 }
 type courseService struct {
 	dao repository.DAO
@@ -31,4 +32,7 @@ func (c courseService) GetCourse(courseID int64) (*dto.Course, error) {
 	}
 
 	return &fullCourse, nil
+}
+func (c courseService) CreateCourse(course *dto.Course) (int64, error) {
+	return 0, nil
 }

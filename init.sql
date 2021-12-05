@@ -1,4 +1,4 @@
-create table person
+create table users
 (
     id           bigserial primary key,
     first_name   varchar        not null,
@@ -19,7 +19,7 @@ create table course
     title       varchar,
     price       int,
     description varchar,
-    foreign key (user_id) references person (id)
+    foreign key (user_id) references users (id)
         on delete cascade
 );
 
@@ -68,7 +68,7 @@ create table score
     user_id      bigint not null,
     indicator_id int,
     score        int,
-    foreign key (user_id) references person (id) on delete cascade,
+    foreign key (user_id) references users (id) on delete cascade,
     foreign key (indicator_id) references indicator (id) on delete cascade
 );
 
@@ -80,7 +80,7 @@ create table review
     feedback   varchar not null,
     created_at TIMESTAMP DEFAULT NOW(),
     updated_at TIMESTAMP,
-    foreign key (user_id) references person (id) on delete cascade,
+    foreign key (user_id) references users (id) on delete cascade,
     foreign key (course_id) references course (id) on delete cascade
 );
 
@@ -90,6 +90,6 @@ create table transaction
     user_id   bigint not null,
     course_id bigint not null,
     status    varchar,
-    foreign key (user_id) references person (id) on delete cascade,
+    foreign key (user_id) references users (id) on delete cascade,
     foreign key (course_id) references course (id) on delete cascade
 );

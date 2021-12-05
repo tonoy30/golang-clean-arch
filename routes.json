@@ -1,0 +1,17 @@
+[
+  {
+    "method": "GET",
+    "path": "/healthy",
+    "name": "github.com/tonoy30/clean-arch/internal/app.app.HealthCheck-fm"
+  },
+  {
+    "method": "POST",
+    "path": "/identity/signup",
+    "name": "github.com/tonoy30/clean-arch/internal/app.app.SignUp-fm"
+  },
+  {
+    "method": "GET",
+    "path": "/courses/:id",
+    "name": "github.com/tonoy30/clean-arch/internal/app.app.GetCourseById-fm"
+  }
+]

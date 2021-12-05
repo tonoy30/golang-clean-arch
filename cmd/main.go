@@ -20,9 +20,10 @@ func main() {
 	}
 	// register all services
 	dao := repository.NewSQLDao(db)
+	authService := service.NewAuthService(dao)
 	courseService := service.NewCourseService(dao)
 
 	// start server
-	application := app.NewApp(courseService)
+	application := app.NewApp(courseService, authService)
 	application.Serve()
 }
